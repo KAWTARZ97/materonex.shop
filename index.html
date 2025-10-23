@@ -1,182 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAT Cargo VAD LLC</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 20px;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero-text {
-            max-width: 500px;
-            padding: 20px;
-            animation: slideInLeft 1.5s ease;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            animation: slideInRight 1.5s ease;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .contact {
-            background: #e9e9e9;
-            padding: 60px 20px;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Inretrospect OC LLC — Professional Services</title>
+<meta name="description" content="Inretrospect OC LLC • Practical support services in Huntington Beach, CA. Admin assistance, operations support, records & compliance.">
+<meta property="og:title" content="Inretrospect OC LLC" />
+<meta property="og:description" content="Professional support services in Huntington Beach, CA." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://avatars.mds.yandex.net/i?id=d04175456e793f6abe32f1a97f60a07311806053-5887571-images-thumbs&n=13" />
+<link rel="icon" href="https://avatars.mds.yandex.net/i?id=d04175456e793f6abe32f1a97f60a07311806053-5887571-images-thumbs&n=13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2563eb;   /* primary */
+    --blue-2:#60a5fa;
+    --ink:#0f172a;    /* header */
+    --text:#374151;   /* body */
+    --bg:#f3f4f6;     /* page */
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+  a{color:var(--blue);text-decoration:none}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+  header{
+    background:linear-gradient(120deg,var(--ink),#0b1220);
+    color:#fff;text-align:center;padding:36px 16px;
+    border-bottom:6px solid var(--blue);
+  }
+  header h1{margin:0;font-size:2.4rem;letter-spacing:.3px}
+  header p{margin:6px 0 0;opacity:.95}
+
+  nav{background:#0b1220;text-align:center;padding:12px}
+  nav a{color:#fff;margin:0 14px;font-weight:800}
+  nav a:hover{color:var(--blue-2)}
+
+  .hero{max-width:1100px;margin:24px auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;padding:0 14px}
+  .hero img{width:100%;border-radius:14px;border:4px solid var(--blue);object-fit:cover}
+  .panel{background:var(--white);border-left:6px solid var(--ink);border-radius:14px;padding:16px}
+  .tag{display:inline-block;background:#dbeafe;border:1px solid #bfdbfe;color:#1e40af;border-radius:999px;padding:6px 12px;margin:6px 6px 0 0;font-size:.9rem}
+
+  .section{max-width:1100px;margin:22px auto;background:var(--white);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+  .section h2{margin:0 0 12px;color:#111}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+
+  .card{background:#f9fafb;border:1px solid #e5e7eb;border-left:6px solid var(--blue);
+        border-radius:10px;padding:12px;transition:.3s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 6px 12px rgba(0,0,0,.08)}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+  .gallery img{width:100%;border-radius:10px;border:2px solid var(--blue);object-fit:cover;aspect-ratio:4/3;transition:.25s;background:#fff}
+  .gallery img:hover{transform:scale(1.03)}
+
+  .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--blue);color:#fff;padding:12px 16px;border-radius:10px;font-weight:800}
+  .btn.secondary{background:#fff;color:var(--text);border:2px solid var(--text)}
+
+  .map{max-width:1100px;margin:16px auto;border-radius:12px;overflow:hidden;border:3px solid var(--blue)}
+  .map iframe{width:100%;height:360px;border:0;display:block}
+
+  footer{background:#111827;color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:6px solid var(--blue)}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;background:#ffffffd9;backdrop-filter:blur(6px);
+       display:flex;gap:10px;justify-content:center;padding:10px;border-top:2px solid var(--blue);z-index:999}
+  .bar a{background:#111827;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800}
+  .bar a:nth-child(2){background:var(--blue)}
+  @media(min-width:820px){.bar{display:none}}
+  @media(max-width:900px){.hero{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">PAT Cargo VAD LLC</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<header>
+  <h1>Inretrospect OC LLC</h1>
+  <p>Professional Support Services • Huntington Beach, CA</p>
+</header>
 
-    <div class="hero" id="home">
-        <div class="hero-text">
-            <h1>PAT Cargo VAD LLC</h1>
-            <p>Your trusted partner in transportation and warehousing. We provide reliable cargo services and storage solutions to meet your business needs with efficiency and care.</p>
-        </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Cargo Services">
-        </div>
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://avatars.mds.yandex.net/i?id=d04175456e793f6abe32f1a97f60a07311806053-5887571-images-thumbs&n=13" alt="Professional team at work">
+  <div class="panel">
+    <h2>Dependable support, delivered on time.</h2>
+    <p>We provide practical admin, ops, and records support so you can stay focused on what matters. Clear communication, flexible scopes, and consistent results.</p>
+    <div>
+      <span class="tag">🗂️ Admin Support</span>
+      <span class="tag">🧭 Operations</span>
+      <span class="tag">📑 Records & Compliance</span>
+      <span class="tag">🤝 Client Services</span>
     </div>
-
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>PAT Cargo VAD LLC is a Domestic LLC based in Arizona, offering specialized services in transportation and warehousing. With a focus on reliability and customer satisfaction, we have been serving businesses since 2021.</p>
-        <p><strong>Registered Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+    <div class="cta">
+      <a class="btn" href="tel:+16809466794">Call: +1 (680) 946-6794</a>
+      <a class="btn secondary" href="mailto:service@materonex.shop">Email: service@materonex.shop</a>
     </div>
+  </div>
+</section>
 
-    <div class="section contact" id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:contact@patcargovadllc.click">contact@patcargovadllc.click</a></p>
-        <p><strong>Agent Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p><strong>Inretrospect OC LLC</strong> supports organizations with day-to-day administrative help, operational assistance, and document handling. We tailor our approach to your workflows for smooth collaboration.</p>
+  <p><strong>Address:</strong> 18411 Gothard St Ste I, Huntington Beach, CA 92648-1208, United States •
+     <strong>Email:</strong> <a href="mailto:service@materonex.shop">service@materonex.shop</a> •
+     <strong>Phone:</strong> <a href="tel:+16809466794">+1 (680) 946-6794</a></p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card"><strong>Administrative Assistance</strong><br/>Scheduling, document prep, and correspondence.</div>
+    <div class="card"><strong>Operations Support</strong><br/>Process coordination, vendor liaison, and logistics.</div>
+    <div class="card"><strong>Records & Filing</strong><br/>Digital/physical records, indexing, and retrieval.</div>
+    <div class="card"><strong>Client Services</strong><br/>Intake, follow-ups, and service desk coverage.</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://avatars.mds.yandex.net/get-sprav-products/5280674/2a000001870d64d2030391a17901ed4ccbb1/M_height" alt="Office front / signage">
+    <img src="https://yandex-images.clstorage.net/hfH560y79/942910BN/ALfIu_Wv-gZqWMTBUio_N9FeMpKaISvTaAO16U2_KmLuuUeK_Q46zn3PZVDGOW-H5MuJw1XrJvFs3Nx6m4a0ieC2-I-Ba_4H360QsIdqvweBf-dGqzDucy3SEcx4OmoUaB5lrUvJ-fn_2LKEJhyK0jAfLOOFaPVlDRz-326Q9krSVEhaR_-akNra9Kby2R6mki-X0hkgv-G-oEVNvk29FNu-xx8ZK2gJ7oqBx9TfGAPhqKwzFQt2IZ0f321u8AY7YuQqyObt6BBoqdWUITsOxrIO5KNKky-xnSBV7519nqa7PfQ9KxpaK54LYgQ3bTvCQdvfkfcZRxH97cws_vNkCePk-jkVnEnSSdi0x9LIj0VAPDYw2MCeYq9yZg3srw3nGY627-k72bs9irA29q9oo_DZ3gDXC1bDnE6-Hp8iJKjDxpm79J17gnsKxlVyKv2m8z00oJqjPCJcU6UO7I-MJov8N64amHtYXwhitoSe2LKBiswA5ThXkkx9PQ-sgSZaY_cK65fMybLay8SW0ysdVtBclgLp8R9jv2A1b-8-HVcanuUNSzoIek-7EoTUfQrDYhjPk8UZhoCNLH1sfHGEO6IWeYvlnhsDKErlpBDJPWQAPqfSWsNvUazxpy4tPg1Hyrw13zl4Onj9KrCnxNwKM_NJLXEEGUeD7uxtXb7j9amChLmo5c_b06i5JFTRS7y34I2mMfgSTgM-Ybbu7zzeh-jddIwbueqI7zsw5rbdOuATyN1TtaqXMI2e_d_NcYXr4Ta4meUfy5Momremw8mPZWMddyDaEB8x7UAUP70ubHY5fhdf2xu66M3LoUb1bghRAjr-gUfLpgJPLz_fbyE0WJL2icjlrbhS-KmlBzCa7sVQL_cQa1M_QH1BlwxNXA3nS741HsjaGsn-ixCXxu9p8DIaruBlWGcx3S7u3N1DB6rTltmYRX6LkYh4luSA2y228R-UA1ry_zMO8GX__w8t0" alt="Work area / office interior">
+    <img src="https://avatars.mds.yandex.net/i?id=1cd33fce471a042b5bd9db7fa1702246f7c53fe6-4470198-images-thumbs&n=13" alt="Team collaboration">
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map" id="map">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=18411+Gothard+St+Ste+I,+Huntington+Beach,+CA+92648&output=embed"
+          title="Map to Inretrospect OC LLC"></iframe>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="grid">
+    <div>
+      <p>📧 <strong>Email:</strong> <a href="mailto:service@materonex.shop">service@materonex.shop</a></p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+16809466794">+1 (680) 946-6794</a></p>
+      <p>📍 <strong>Address:</strong> 18411 Gothard St Ste I, Huntington Beach, CA 92648-1208, United States</p>
     </div>
+    <div>
+      <p><em>Hours</em></p>
+      <ul>
+        <li>Mon–Fri: 9:00 – 18:00</li>
+        <li>Sat: 10:00 – 14:00</li>
+        <li>Sun: Closed</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        &copy; 2025 PAT Cargo VAD LLC. All rights reserved.
-    </footer>
+<!-- MOBILE BAR -->
+<div class="bar">
+  <a href="tel:+16809466794">Call</a>
+  <a href="mailto:service@materonex.shop">Email</a>
+  <a href="#services">Services</a>
+</div>
 
-    <script>
-        // Intersection Observer for fade-in effect
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+<footer>
+  <p>&copy; 2025 Inretrospect OC LLC — Professional Support Services</p>
+</footer>
 
 </body>
 </html>
